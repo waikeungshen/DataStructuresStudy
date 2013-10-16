@@ -106,3 +106,9 @@ Status GetElem(SqList L, int i, ElemType &e)
     e = L.elem[i-1];
     return OK;
 }
+
+int main()
+{
+
+    return 0;
+}
