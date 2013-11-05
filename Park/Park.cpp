@@ -46,7 +46,7 @@ void Push(SqStack &S, car e)
     if (S.top - S.base <= S.stacksize)
         *S.top++ = e;
     else
-        cout << "停车场停车位以满" << endl;
+        cout << "停车场停车位已满" << endl;
 }
 
 //出栈
@@ -58,6 +58,15 @@ void Pop(SqStack &S, car &e)
     }
     else
         cout << "停车场未停车" << endl;
+}
+
+//判断栈是否为空
+bool StackEmpty(SqStack &S)
+{
+    if (S.base == S.top)
+        return true;
+    else
+        return false;
 }
 
 //创建一个空队列
@@ -109,7 +118,7 @@ void QueueNum(LinkQueue &Q)
     p->data.number--;
 }
 //统计队列中的元素个数
-int QueueNumber(LinkQueue &Q)
+/*int QueueNumber(LinkQueue &Q)
 {
     QueuePtr p = Q.front->next;
     int num = 0;
@@ -123,12 +132,13 @@ int QueueNumber(LinkQueue &Q)
     num++;
     return num;
 
-}
+}*/
 
 /*---------------开始操作--------------------*/
 SqStack Into;//停车场栈
 SqStack Temp;//临时停车栈
 LinkQueue Gallery;//通道队列
+int QueueNumber = 0;
 
 void IntoPark(int licensePlate, int time)
 {
@@ -144,7 +154,7 @@ void IntoPark(int licensePlate, int time)
     }
     else
     {
-        e.number = QueueNumber(Gallery) + 1;
+        e.number = ++QueueNumber;
         EnQueue(Gallery, e);//进入队列
         cout << "车牌号：" << e.licensePlate << endl;
         cout << "停在通道的位置：" << e.number << endl;
@@ -158,11 +168,19 @@ void OutPark(int licensePlate, int time)
    {
        Pop (Into, e);
        if (e.licensePlate != licensePlate)//不是要出停车场的车
+       {
            Push(Temp, e);//压入临时停车栈
+       }
+       if (StackEmpty(Into) == true)
+           break;
    } while (e.licensePlate != licensePlate);
-   cout << "车牌号:" << e.licensePlate << endl;
-   cout << "进入停车场时间:" << e.time << endl;
-   cout << "开出停车场时间:" << time << endl;
+   if (e.licensePlate == licensePlate)
+   {
+       cout << "车牌号:" << e.licensePlate << endl;
+       cout << "进入停车场时间:" << e.time << endl;
+       cout << "开出停车场时间:" << time << endl;
+       cout << "费用：" << (time - e.time) * 10 << endl;
+   }
    while (Temp.top != Temp.base)//将临时停车栈的车开回停车场
    {
        Pop(Temp, e);//弹出临时停车栈的车
@@ -172,7 +190,8 @@ void OutPark(int licensePlate, int time)
    if (Gallery.front != Gallery.rear)//通道中还有车
    {
        DeQueue(Gallery, e);
-       QueueNum(Gallery);
+       QueueNumber--;
+       QueueNum(Gallery);//编号减1
        e.number = Into.top - Into.base + 1;
        e.time = time;
        Push(Into, e);
