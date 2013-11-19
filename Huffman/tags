@@ -4,58 +4,32 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CharacterCode	Huffman.cpp	/^void CharacterCode(char c, String &code)$/;"	f
+CreatBook	Huffman.cpp	/^void CreatBook()$/;"	f
 Decoding	Huffman.cpp	/^void Decoding()$/;"	f
 Encoding	Huffman.cpp	/^void Encoding()$/;"	f
-HC	Huffman.h	/^HuffmanCode HC;\/\/哈夫曼编码表$/;"	v
-HC	a.cpp	/^HuffmanCode HC;\/\/哈夫曼编码表$/;"	v
+HCnode	Huffman.h	/^typedef struct HCnode$/;"	s
+HCnode	Huffman.h	/^} HCnode;$/;"	t	typeref:struct:HCnode
 HT	Huffman.h	/^HuffmanTree HT;\/\/哈夫曼树$/;"	v
-HT	a.cpp	/^HuffmanTree HT;\/\/哈夫曼树$/;"	v
 HTNode	Huffman.h	/^typedef struct HTNode$/;"	s
 HTNode	Huffman.h	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode
-HTNode	a.cpp	/^typedef struct HTNode$/;"	s	file:
-HTNode	a.cpp	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode	file:
-HTNode	other.cpp	/^typedef struct HTNode$/;"	s	file:
-HTNode	other.cpp	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode	file:
-HuffmanCode	Huffman.h	/^typedef char **HuffmanCode;\/\/动态分配数组存储赫夫曼编码表$/;"	t
-HuffmanCode	a.cpp	/^typedef char **HuffmanCode;\/\/动态分配数组存储赫夫曼编码表$/;"	t	file:
-HuffmanCode	other.cpp	/^typedef char **HuffmanCode;\/\/动态分配数组存储赫夫曼编码表$/;"	t	file:
-HuffmanCoding	Huffman.cpp	/^void HuffmanCoding (HuffmanTree &HT, HuffmanCode &HC, int *w, int n)\/\/HT哈夫曼树，HC哈夫曼编码表$/;"	f
-HuffmanCoding	a.cpp	/^void HuffmanCoding (HuffmanTree &HT, HuffmanCode &HC, int *w, int n)\/\/HT哈夫曼树，HC哈夫曼编码表$/;"	f
-HuffmanCoding	other.cpp	/^void HuffmanCoding (HuffmanTree &HT, HuffmanCode &HC, int *w, int n)$/;"	f
+HuffmanCoding	Huffman.cpp	/^void HuffmanCoding(HuffmanTree &HT, int n, char *ch, int *weight)\/\/哈夫曼编码$/;"	f
 HuffmanTree	Huffman.h	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode
-HuffmanTree	a.cpp	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode	file:
-HuffmanTree	other.cpp	/^} HTNode, *HuffmanTree;\/\/动态分配数组存储赫夫曼树$/;"	t	typeref:struct:HTNode	file:
 Initialization	Huffman.cpp	/^void Initialization()$/;"	f
-Initialization	a.cpp	/^void Initialization()$/;"	f
 Print	Huffman.cpp	/^void Print()$/;"	f
+ReadHT	Huffman.cpp	/^void ReadHT()$/;"	f
 Select	Huffman.cpp	/^void Select(HuffmanTree t,int i,int &s1,int &s2)$/;"	f
-Select	a.cpp	/^void Select(HuffmanTree t,int i,int *s1,int *s2)$/;"	f
-Select	other.cpp	/^void Select(HuffmanTree t,int i,int *s1,int *s2)$/;"	f
 TreePrinting	Huffman.cpp	/^void TreePrinting()$/;"	f
-WhichPrint	Huffman.cpp	/^void WhichPrint(HuffmanCode &HC, int n)$/;"	f
-WhichPrint	a.cpp	/^void WhichPrint(HuffmanCode &HC, int n)$/;"	f
-character	Huffman.h	/^char *character;\/\/字符集$/;"	v
-character	a.cpp	/^char *character;\/\/字符集$/;"	v
-lchild	Huffman.h	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode
-lchild	a.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
-lchild	other.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
+WriteHT	Huffman.cpp	/^void WriteHT()$/;"	f
+_Huffman_	Huffman.h	2;"	d
+ch	Huffman.h	/^    char ch;\/\/字符$/;"	m	struct:HCnode
+ch	Huffman.h	/^    char ch;\/\/字符$/;"	m	struct:HTNode
+character	Huffman.h	/^HCnode *character = NULL;\/\/哈夫曼编码表$/;"	v
+lchild	Huffman.h	/^    int parent, lchild, rchild;$/;"	m	struct:HTNode
 main	Huffman.cpp	/^int main()$/;"	f
-main	a.cpp	/^int main()$/;"	f
 menu	Huffman.cpp	/^void menu()$/;"	f
 min	Huffman.cpp	/^int min(HuffmanTree t,int i)$/;"	f
-min	a.cpp	/^int min(HuffmanTree t,int i)$/;"	f
-min	other.cpp	/^int min(HuffmanTree t,int i)$/;"	f
 n	Huffman.h	/^int n;\/\/字符集大小$/;"	v
-n	a.cpp	/^int n;\/\/字符集大小$/;"	v
-parent	Huffman.h	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode
-parent	a.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
-parent	other.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
-rchild	Huffman.h	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode
-rchild	a.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
-rchild	other.cpp	/^    unsigned int parent, lchild, rchild;$/;"	m	struct:HTNode	file:
-weight	Huffman.h	/^    unsigned int weight;\/\/权值$/;"	m	struct:HTNode
-weight	Huffman.h	/^int *weight;\/\/权值$/;"	v
-weight	a.cpp	/^    unsigned int weight;\/\/权值$/;"	m	struct:HTNode	file:
-weight	a.cpp	/^int *weight;\/\/权值$/;"	v
-weight	other.cpp	/^    unsigned int weight;\/\/权值$/;"	m	struct:HTNode	file:
+parent	Huffman.h	/^    int parent, lchild, rchild;$/;"	m	struct:HTNode
+pstring	Huffman.h	/^    char *pstring;\/\/编码$/;"	m	struct:HCnode
+rchild	Huffman.h	/^    int parent, lchild, rchild;$/;"	m	struct:HTNode
+weight	Huffman.h	/^    int weight;\/\/权值$/;"	m	struct:HTNode
