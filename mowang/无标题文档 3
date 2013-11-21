@@ -1,0 +1,106 @@
+#include "stdio.h"
+#include "string.h"
+#include "conio.h"
+#define MAX 256
+
+void pushstack(char s[],char x,int flag,int *top)
+{
+    char k[20];
+    int m,i;
+    if(flag==1)
+    {
+        if(x=='A')
+        {
+            strcpy(k,"sae");
+            m=strlen(k);
+            for(i=0;i<m;i++)
+            {
+                if(*top>MAX-1)
+                {
+                    printf("上溢！");
+                    exit(0);
+                }
+                else
+                    s[++(*top)]=k[m-1-i];
+            }
+        }
+        else if(x=='B')
+        {
+            strcpy(k,"tsaedsae");
+            m=strlen(k);
+            for(i=0;i<m;i++)
+            {
+                if(*top>MAX-1)
+                {
+                    printf("上溢！");
+                    exit(0);
+                }
+                else
+                    s[++(*top)]=k[m-1-i];
+            }
+        }
+        else
+            s[++(*top)]=x;
+    }
+    else
+        s[++(*top)]=x;
+}
+
+void charmap(char x)
+{
+    switch(x)
+    {
+        case 't':    printf("天");      break;
+        case 'd':    printf("地");      break;
+        case 's':    printf("上");      break;
+        case 'a':    printf("一只");    break;
+        case 'e':    printf("鹅");      break;
+        case 'z':    printf("追");      break;
+        case 'g':    printf("赶");      break;
+        case 'x':    printf("下");      break;
+        case 'n':    printf("蛋");      break;
+        case 'i':    printf("恨");      break;
+        default :    break;
+    }
+}
+void main (void)
+{
+    char s1[MAX],s2[MAX],d[MAX];
+    int flag=0,i,t;
+    int top1=-1,top2=-1,front=-1,rear=-1;
+    printf("请输入魔王语言:\n");
+    scanf("%s",s2);
+    t=strlen(s2);
+    for(i=0;i<t;i++)
+        pushstack(s1,s2[t-1-i],0,&top1);
+    while(top1!=-1)
+    {
+        if(s1[top1]=='(')
+        {
+            t=s1[--top1];
+     while(s1[top1-1]!=')')
+            {
+                d[++rear]=t;
+   d[++rear]=s1[--top1];
+            }
+            d[++rear]=t;
+            top1--;
+            flag=0;
+        }
+        pushstack(s2,s1[top1--],0,&top2);
+        flag++;
+    }
+    while((flag--)!=0)
+        pushstack(s1,s2[top2--],1,&top1);
+    while(rear!=front)
+        pushstack(s1,d[++front],1,&top1);
+    while(top2!=-1)
+        pushstack(s1,s2[top2--],1,&top1);
+    printf("魔王语言翻译成人的语言是:\n");
+    while(top1!=-1)
+    {
+      
+       printf("%c",s1[top1--]);
+     }
+    getch();
+}

@@ -1,0 +1,61 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DeQueue	mowang.cpp	/^void DeQueue(SqQueue &Q, char &e)   \/\/出队列$/;"	f
+DeQueue	mowang1.cpp	/^bool SqQueue::DeQueue(char &e)    \/\/出队列$/;"	f	class:SqQueue
+DestoryQueue	mowang.cpp	/^void DestoryQueue(SqQueue &Q)$/;"	f
+EnQueue	mowang.cpp	/^void EnQueue(SqQueue &Q, char e)    \/\/入队列$/;"	f
+EnQueue	mowang1.cpp	/^bool SqQueue::EnQueue(char e)    \/\/入队列$/;"	f	class:SqQueue
+EnQueue_A	mowang.cpp	/^void EnQueue_A(SqQueue &Q)$/;"	f
+EnQueue_A	mowang1.cpp	/^void SqQueue::EnQueue_A()$/;"	f	class:SqQueue
+EnQueue_B	mowang.cpp	/^void EnQueue_B(SqQueue &Q)$/;"	f
+EnQueue_B	mowang1.cpp	/^void SqQueue::EnQueue_B()$/;"	f	class:SqQueue
+InitSqQueue	mowang.cpp	/^void InitSqQueue (SqQueue &Q)$/;"	f
+InitStack	mowang.cpp	/^void InitStack(SqStack &S)  \/\/构造空栈$/;"	f
+Node	mowang.cpp	/^typedef struct Node$/;"	s	file:
+Node	mowang.cpp	/^} Node, *QueuePrt;$/;"	t	typeref:struct:Node	file:
+Node	mowang1.cpp	/^	struct Node$/;"	s	class:SqQueue	file:
+Node	mowang1.cpp	/^	struct Node$/;"	s	class:SqStack	file:
+OutQueue	mowang.cpp	/^void OutQueue(SqQueue &Q)$/;"	f
+OutQueue	mowang1.cpp	/^void SqQueue::OutQueue()    \/\/输出队列中的数据$/;"	f	class:SqQueue
+QueueEmpty	mowang1.cpp	/^bool SqQueue::QueueEmpty()$/;"	f	class:SqQueue
+QueuePrt	mowang.cpp	/^} Node, *QueuePrt;$/;"	t	typeref:struct:Node	file:
+STACK_INIT_SIZE	mowang.cpp	5;"	d	file:
+SqQueue	mowang.cpp	/^}SqQueue;$/;"	t	typeref:struct:__anon1	file:
+SqQueue	mowang1.cpp	/^SqQueue::SqQueue()$/;"	f	class:SqQueue
+SqQueue	mowang1.cpp	/^class SqQueue    \/\/使用链表实现队列类$/;"	c	file:
+SqStack	mowang.cpp	/^} SqStack;$/;"	t	typeref:struct:__anon2	file:
+SqStack	mowang1.cpp	/^SqStack::SqStack()$/;"	f	class:SqStack
+SqStack	mowang1.cpp	/^class SqStack    \/\/使用链表实现栈类$/;"	c	file:
+StackEmpty	mowang1.cpp	/^bool SqStack::StackEmpty()  \/\/判断是否为空栈$/;"	f	class:SqStack
+base	mowang.cpp	/^    char *base;\/\/栈低指针$/;"	m	struct:__anon2	file:
+base	mowang1.cpp	/^	Node *top,*base;$/;"	m	class:SqStack	file:
+content	mowang1.cpp	/^		int content;$/;"	m	struct:SqQueue::Node	file:
+content	mowang1.cpp	/^		int content;$/;"	m	struct:SqStack::Node	file:
+data	mowang.cpp	/^    char data;$/;"	m	struct:Node	file:
+front	mowang.cpp	/^    QueuePrt front;\/\/队头指针$/;"	m	struct:__anon1	file:
+head	mowang1.cpp	/^	Node *head,*last;$/;"	m	class:SqQueue	file:
+last	mowang1.cpp	/^	Node *head,*last;$/;"	m	class:SqQueue	file:
+main	mowang.cpp	/^int main()$/;"	f
+main	mowang1.cpp	/^int main(void)$/;"	f
+next	mowang.cpp	/^    Node *next;$/;"	m	struct:Node	file:
+next	mowang1.cpp	/^		Node *next;$/;"	m	struct:SqQueue::Node	file:
+next	mowang1.cpp	/^		Node *next;$/;"	m	struct:SqStack::Node	file:
+pop	mowang.cpp	/^void pop(SqStack &S, char &e)   \/\/弹出栈顶元素$/;"	f
+pop	mowang1.cpp	/^bool SqStack::pop(char &e)    \/\/出栈操作$/;"	f	class:SqStack
+push	mowang.cpp	/^void push(SqStack &S, char e)   \/\/压入栈$/;"	f
+push	mowang1.cpp	/^bool SqStack::push(char e)    \/\/压栈操作$/;"	f	class:SqStack
+push_and_pop	mowang.cpp	/^void push_and_pop(SqQueue &Q, SqStack &S2)\/\/处理规则2$/;"	f
+push_and_pop	mowang1.cpp	/^void push_and_pop(SqStack &S1,SqStack &S2)      \/\/处理规则2$/;"	f
+readLanguage	mowang.cpp	/^bool readLanguage(SqStack &S)\/\/将魔王语言压入栈$/;"	f
+read_language	mowang1.cpp	/^bool read_language(SqStack &S)        \/\/将魔王语言倒置压入栈中$/;"	f
+rear	mowang.cpp	/^    QueuePrt rear;  \/\/队尾指针$/;"	m	struct:__anon1	file:
+top	mowang.cpp	/^    char *top;\/\/栈顶指针$/;"	m	struct:__anon2	file:
+top	mowang1.cpp	/^	Node *top,*base;$/;"	m	class:SqStack	file:
+word	mowang1.cpp	/^		char word;$/;"	m	struct:SqQueue::Node	file:
+word	mowang1.cpp	/^		char word;$/;"	m	struct:SqStack::Node	file:
+~SqQueue	mowang1.cpp	/^SqQueue::~SqQueue()$/;"	f	class:SqQueue
+~SqStack	mowang1.cpp	/^SqStack::~SqStack()$/;"	f	class:SqStack

@@ -105,20 +105,32 @@ void Decoding()
     if (outFile.fail())
     {
         cout << "ERROR!" << endl;
-        exit(1);
+        return;
     }
-    char codeString[256];
+    //读取需译码的01串到codeString中
+    char codeString[500];
     int i = 0;
-    while (codeString[i++] = inFile.get()) {}   //读取需译码的01串到codeString中
-    codeString[i] = '\0';
+    codeString[i] = inFile.get();
+    while (!inFile.eof())
+    {
+        codeString[++i] = inFile.get();
+    }
+    cout << endl;
+
     cout << "需译码的01串是：" << endl;
-    cout << codeString << endl;
+    i = 0;
+    while (codeString[i] != '\0')
+    {
+        cout << codeString[i];
+        i++;
+    }
+    cout << endl;
     cout << "译码的结果为：" << endl;
     int root = 2 * n - 2;   //根
     int res = -1;   //结果
     i = 0;
     int p = root;
-    while (i < strlen(codeString))
+    while (i < strlen(codeString)-1)
     {
         while (p != -1)
         {
@@ -140,6 +152,8 @@ void Decoding()
         res = -1;
         p = root;
     }
+    cout << endl;
+    outFile << endl;
     cout << "译码完毕！" << endl;
     inFile.close();
     outFile.close();
