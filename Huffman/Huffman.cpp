@@ -5,12 +5,6 @@
     * Created Time: 2013年11月05日 星期二 10时46分42秒
 ************************************************************************/
 
-/*
- *history:
- *Decoding函数未写
- *Print函数未写
- */
-
 #include <iostream>
 #include "Huffman.h"
 using namespace std;
@@ -37,7 +31,7 @@ void Initialization()
     int weight[256];
     cout << "输入字符集大小:";
     cin >> n;
-    cout << "输入每个字符以及它的权值：" << endl;
+    cout << "输入每个字符以及它的权值(空格用$表示)：" << endl;
     for (i = 0; i < n; i++)
     {
         cin >> ch[i] >> weight[i];
@@ -80,9 +74,11 @@ void Encoding()
             }
         }
         //将编码结果写入文件CodeFile
-        outFile << code;
-        if (ch != '\n')
+        if (ch != '\n')//最后一个输出会是'\n'，并没有申请内存
+        {
+            outFile << code;
             free(code);
+        }
         ch = inFile.get();
     }
     inFile.close();
@@ -115,6 +111,7 @@ void Decoding()
     {
         codeString[++i] = inFile.get();
     }
+    codeString[i] = '\0';
     cout << endl;
 
     cout << "需译码的01串是：" << endl;
@@ -146,8 +143,17 @@ void Decoding()
             }
             i++;
         }
-        cout << HT[res].ch;
-        outFile << HT[res].ch;
+        //判断是否是空格
+        if (HT[res].ch != '$')
+        {
+            cout << HT[res].ch;
+            outFile << HT[res].ch;
+        }
+        else
+        {
+            cout << " ";
+            outFile << " ";
+        }
         i--;
         res = -1;
         p = root;
@@ -234,7 +240,7 @@ void TreePrinting(int n)
 int min(HuffmanTree t,int i)
 {
     int j,flag;
-    int k=100; /* 取k为不小于可能的值 */
+    int k=2000; /* 取k为不小于可能的值 */
     for(j = 0; j <= i; j++)
     {
         if(t[j].weight < k && t[j].parent == -1)
@@ -302,6 +308,7 @@ void CreatBook()
     {
         start = n - 1;
         character[i].ch = HT[i].ch;
+        //c为当前节点，f为其父节点
         for (c = i, f = HT[i].parent; f != -1; c = f , f = HT[f].parent)//从叶子到根逆向求编码
         {
             if (HT[f].lchild == c)
@@ -315,12 +322,12 @@ void CreatBook()
     }
     free(cd);
     //打印
-   // cout << "打印哈夫曼编码表" << endl;
-   // for (i = 0; i < n; i++)
-   // {
-   //     cout << character[i].ch << " " << character[i].pstring << endl;
-   // }
-   // cout << "打印完毕" << endl;
+  // cout << "打印哈夫曼编码表" << endl;
+  // for (i = 0; i < n; i++)
+  // {
+  //     cout << character[i].ch << " " << character[i].pstring << endl;
+  // }
+  // cout << "打印完毕" << endl;
 }
 
 //将哈夫曼树存于文件hfmTree
@@ -419,6 +426,7 @@ int main()
             cout << "参数错误，重新输入:" << endl;
         }
     } while (select != 'Q');
+
     cout << "System Close !" << endl;
     return 0;
 }

@@ -18,7 +18,7 @@ Initialization	Huffman.cpp	/^void Initialization()$/;"	f
 Print	Huffman.cpp	/^void Print()$/;"	f
 ReadHT	Huffman.cpp	/^void ReadHT()$/;"	f
 Select	Huffman.cpp	/^void Select(HuffmanTree t,int i,int &s1,int &s2)$/;"	f
-TreePrinting	Huffman.cpp	/^void TreePrinting()$/;"	f
+TreePrinting	Huffman.cpp	/^void TreePrinting(int n)$/;"	f
 WriteHT	Huffman.cpp	/^void WriteHT()$/;"	f
 _Huffman_	Huffman.h	2;"	d
 ch	Huffman.h	/^    char ch;\/\/字符$/;"	m	struct:HCnode

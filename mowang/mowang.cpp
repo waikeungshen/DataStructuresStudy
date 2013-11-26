@@ -26,7 +26,7 @@ typedef struct  //栈
 //栈的基本操作
 void InitStack(SqStack &S)  //构造空栈
 {
-    S.base = (char*) malloc (STACK_INIT_SIZE * sizeof(char));
+    S.base = (char*) malloc ( 100 * sizeof(char));
     if (!S.base)
     {
         cout << "分配内存失败！" << endl;
@@ -84,7 +84,7 @@ void DeQueue(SqQueue &Q, char &e)   //出队列
     e = p->data;
     Q.front->next = p->next;
     if (Q.rear == p)
-        Q.rear == Q.front;
+        Q.rear = Q.front;
     free(p);
 }
 
@@ -106,41 +106,29 @@ bool readLanguage(SqStack &S)//将魔王语言压入栈
     if (left != right)
         return false;
     //压入栈
-    if (i = n-1; i>=0; i--)
-        S.push(s[i]);
+    for (i = n-1;i>=0;i--)
+        push(S,s[i]);
     return true;
 }
 
+/*********************************
+ *这个函数修改了，基本重写了
+ *********************************/
 void push_and_pop(SqQueue &Q, SqStack &S2)//处理规则2
 {
     char e, ch;
-    SqStack S3;
-    InitStack(S3);
-    while (Q.front != Q.rear)
+    if (Q.front == Q.rear)
+        return;
+    ch = Q.rear->data;
+    //DeQueue(Q,e);//')'
+    while (Q.front->next != Q.rear)
     {
+        push(S2,ch);
         DeQueue(Q,e);
-        if (e =='(')
-        {
-            DeQueue(Q,e);
-            ch = e;
-            if (e != ')')
-                DeQueue(Q,e);
-            //将括号内字符逆序压入S3
-            while(e != ')')
-            {
-                push(S3,e);
-                DeQueue(Q,e);
-            }
-            while (S3.base != S3.top)
-            {
-                push(S2,ch);
-                pop(S3,e);
-                push(S2,e);
-            }
-            push(S2,ch);
-        }
+        push(S2,e);
     }
-    free(S3.base);
+    push(S2,ch);
+    DeQueue(Q,e);//Q中最后一个弹出,也就是那个特殊的
 }
 
 void EnQueue_A(SqQueue &Q)
@@ -158,10 +146,51 @@ void EnQueue_B(SqQueue &Q)
     EnQueue_A(Q);
 }
 
+//打印
+void print(char c)
+{
+    switch (c)
+    {
+    case 't':
+        cout << "天";
+        break;
+    case 'd':
+        cout << "地";
+        break;
+    case 's':
+        cout << "上";
+        break;
+    case 'a':
+        cout << "一只";
+        break;
+    case 'e':
+        cout << "鹅";
+        break;
+    case 'z':
+        cout << "追";
+        break;
+    case 'g':
+        cout << "赶";
+        break;
+    case 'x':
+        cout << "下";
+        break;
+    case 'n':
+        cout << "蛋";
+        break;
+    case 'h':
+        cout << "恨";
+        break;
+    }
+}
+
 void OutQueue(SqQueue &Q)
 {
     for (Node *p = Q.front->next; p!= NULL;p=p->next)
+    {
         cout << p->data;
+        //print(p->data);
+    }
     cout << endl;
 }
 
@@ -193,17 +222,19 @@ int main()
     while (S.top != S.base)
     {
         pop(S,e);
-        if (e =='(')
+        if (e ==')')
         {
-            EnQueue(Q,e);
-            pop(S,e);
-            while (e != ')')
+            //这里有修改
+            //EnQueue(Q,e);
+            pop(S2,e);
+            while (e != '(')
             {
                 EnQueue(Q,e);
-                pop(S,e);
+                pop(S2,e);
             }
-            if (e == ')')
-                EnQueue(Q,e);
+            //这里有修改
+            //if (e == '(')
+                //EnQueue(Q,e);
             push_and_pop(Q,S2);
         }
         else
@@ -214,6 +245,8 @@ int main()
         pop(S2,e);
         push(S,e);
     }
+    DestoryQueue(Q);
+    InitSqQueue(Q);
     //对规则1操作
     while (S.top != S.base)
     {

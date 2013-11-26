@@ -23,7 +23,7 @@ OutQueue	mowang.cpp	/^void OutQueue(SqQueue &Q)$/;"	f
 OutQueue	mowang1.cpp	/^void SqQueue::OutQueue()    \/\/输出队列中的数据$/;"	f	class:SqQueue
 QueueEmpty	mowang1.cpp	/^bool SqQueue::QueueEmpty()$/;"	f	class:SqQueue
 QueuePrt	mowang.cpp	/^} Node, *QueuePrt;$/;"	t	typeref:struct:Node	file:
-STACK_INIT_SIZE	mowang.cpp	5;"	d	file:
+STACK_INIT_SIZE	mowang.cpp	6;"	d	file:
 SqQueue	mowang.cpp	/^}SqQueue;$/;"	t	typeref:struct:__anon1	file:
 SqQueue	mowang1.cpp	/^SqQueue::SqQueue()$/;"	f	class:SqQueue
 SqQueue	mowang1.cpp	/^class SqQueue    \/\/使用链表实现队列类$/;"	c	file:
@@ -46,6 +46,7 @@ next	mowang1.cpp	/^		Node *next;$/;"	m	struct:SqQueue::Node	file:
 next	mowang1.cpp	/^		Node *next;$/;"	m	struct:SqStack::Node	file:
 pop	mowang.cpp	/^void pop(SqStack &S, char &e)   \/\/弹出栈顶元素$/;"	f
 pop	mowang1.cpp	/^bool SqStack::pop(char &e)    \/\/出栈操作$/;"	f	class:SqStack
+print	mowang.cpp	/^void print(char c)$/;"	f
 push	mowang.cpp	/^void push(SqStack &S, char e)   \/\/压入栈$/;"	f
 push	mowang1.cpp	/^bool SqStack::push(char e)    \/\/压栈操作$/;"	f	class:SqStack
 push_and_pop	mowang.cpp	/^void push_and_pop(SqQueue &Q, SqStack &S2)\/\/处理规则2$/;"	f
