@@ -1,0 +1,57 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ALGraph	CriticalPath.cpp	/^class ALGraph   $/;"	c	file:
+AMLGraph	Graph.cpp	/^struct AMLGraph$/;"	s	file:
+ArcNode	CriticalPath.cpp	/^class ArcNode \/\/表结点  $/;"	c	file:
+BFSTraverse	Graph.cpp	/^void BFSTraverse(AMLGraph G)$/;"	f
+CreateGraph	Graph.cpp	/^int CreateGraph(AMLGraph *G)$/;"	f
+Create_ALG	CriticalPath.cpp	/^    void Create_ALG()  $/;"	f	class:ALGraph
+Critical_Path	CriticalPath.cpp	/^    void Critical_Path()  $/;"	f	class:ALGraph
+DFS	Graph.cpp	/^void DFS (AMLGraph G, int v)$/;"	f
+DFSTraverse	Graph.cpp	/^void DFSTraverse(AMLGraph G)$/;"	f
+EBox	Graph.cpp	/^struct EBox$/;"	s	file:
+FirstAdjVex	Graph.cpp	/^int FirstAdjVex(AMLGraph G, int u)$/;"	f
+InfoType	Graph.cpp	/^typedef char InfoType;$/;"	t	file:
+LocateVex	Graph.cpp	/^int LocateVex (AMLGraph *G, VertexType e)$/;"	f
+Locate_Vex	CriticalPath.cpp	/^    int Locate_Vex(string v) \/\/求顶点在顶点数组中的位置  $/;"	f	class:ALGraph
+MAX_INFO	Graph.cpp	8;"	d	file:
+MAX_NAME	Graph.cpp	7;"	d	file:
+MAX_VERTEX_NUM	Graph.cpp	14;"	d	file:
+MAX_VEX_NUM	CriticalPath.cpp	/^const int MAX_VEX_NUM=20;  $/;"	v
+NextAdjVex	Graph.cpp	/^int NextAdjVex(AMLGraph G, int u, int w)$/;"	f
+Topo_Order	CriticalPath.cpp	/^    bool Topo_Order(stack<int> &T)  $/;"	f	class:ALGraph
+VNode	CriticalPath.cpp	/^class VNode \/\/头结点  $/;"	c	file:
+VertexType	Graph.cpp	/^typedef char VertexType[MAX_NAME];$/;"	t	file:
+VexBox	Graph.cpp	/^struct VexBox$/;"	s	file:
+VisitIf	Graph.cpp	/^typedef enum {unvisited, visited} VisitIf;$/;"	t	typeref:enum:__anon1	file:
+adjmulist	Graph.cpp	/^    VexBox adjmulist[MAX_VERTEX_NUM];$/;"	m	struct:AMLGraph	file:
+adjvex	CriticalPath.cpp	/^    int adjvex;  $/;"	m	class:ArcNode	file:
+arcnum	CriticalPath.cpp	/^    int arcnum;  $/;"	m	class:ALGraph	file:
+data	CriticalPath.cpp	/^    string data;  $/;"	m	class:VNode	file:
+data	Graph.cpp	/^    VertexType data;$/;"	m	struct:VexBox	file:
+edgenum	Graph.cpp	/^    int vexnum, edgenum; \/\/ 无向图的当前顶点数和边数$/;"	m	struct:AMLGraph	file:
+firstarc	CriticalPath.cpp	/^    ArcNode *firstarc;  $/;"	m	class:VNode	file:
+firstedge	Graph.cpp	/^    EBox *firstedge; \/\/ 指向第一条依附该顶点的边$/;"	m	struct:VexBox	file:
+ilink	Graph.cpp	/^    EBox *ilink, *jlink; \/\/ 分别指向依附这两个顶点的下一条边$/;"	m	struct:EBox	file:
+indegree	CriticalPath.cpp	/^    int indegree; \/\/顶点的入度  $/;"	m	class:VNode	file:
+info	CriticalPath.cpp	/^    int info;\/\/权值  $/;"	m	class:ArcNode	file:
+info	Graph.cpp	/^    InfoType *info; \/\/ 该边信息指针$/;"	m	struct:EBox	file:
+ivex	Graph.cpp	/^    int ivex, jvex; \/\/ 该边依附的两个顶点的位置$/;"	m	struct:EBox	file:
+jlink	Graph.cpp	/^    EBox *ilink, *jlink; \/\/ 分别指向依附这两个顶点的下一条边$/;"	m	struct:EBox	file:
+jvex	Graph.cpp	/^    int ivex, jvex; \/\/ 该边依附的两个顶点的位置$/;"	m	struct:EBox	file:
+main	CriticalPath.cpp	/^int main()  $/;"	f
+main	Graph.cpp	/^int main ()$/;"	f
+mark	Graph.cpp	/^    VisitIf mark; \/\/ 访问标记$/;"	m	struct:EBox	file:
+nextarc	CriticalPath.cpp	/^    ArcNode *nextarc;  $/;"	m	class:ArcNode	file:
+unvisited	Graph.cpp	/^typedef enum {unvisited, visited} VisitIf;$/;"	e	enum:__anon1	file:
+ve	CriticalPath.cpp	/^int ve[20];\/\/全局变量,存放各个事件的最早发生时间  $/;"	v
+vertices	CriticalPath.cpp	/^    VNode vertices[MAX_VEX_NUM];  $/;"	m	class:ALGraph	file:
+vexnum	CriticalPath.cpp	/^    int vexnum;  $/;"	m	class:ALGraph	file:
+vexnum	Graph.cpp	/^    int vexnum, edgenum; \/\/ 无向图的当前顶点数和边数$/;"	m	struct:AMLGraph	file:
+visitFunc	Graph.cpp	/^int (*visitFunc)(VertexType v);\/\/函数变量$/;"	v
+visite	Graph.cpp	/^int visite[MAX_VERTEX_NUM];\/\/访问标记数组$/;"	v
+visited	Graph.cpp	/^typedef enum {unvisited, visited} VisitIf;$/;"	e	enum:__anon1	file:
