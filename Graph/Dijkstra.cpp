@@ -86,7 +86,7 @@ public:
   
         for(i=1;i<vexnum;i++)  
         {  
-            min=MAX;  
+            min=MAX;//当前所知离v顶点最近的距离  
             for(int w=0;w<vexnum;w++)  
                 if(!Final[w])  
                     if(Dist[w]<min)  

@@ -1,10 +1,3 @@
-/*************************************************************************
-    * File Name: CriticalPath.cpp
-    * Author: waikeung
-    * mail: waikeungshen@gmail.com
-    * Created Time: 2013年12月03日 星期二 20时25分35秒
- ************************************************************************/
-
 #include<iostream>
 #include<string>
 #include<stack>

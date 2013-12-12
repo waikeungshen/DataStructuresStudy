@@ -114,7 +114,7 @@ bool readLanguage(SqStack &S)//将魔王语言压入栈
 /*********************************
  *这个函数修改了，基本重写了
  *********************************/
-void push_and_pop(SqQueue &Q, SqStack &S2)//处理规则2
+void push_and_pop(SqQueue &Q, SqStack &S1)//处理规则2
 {
     char e, ch;
     if (Q.front == Q.rear)
@@ -123,11 +123,11 @@ void push_and_pop(SqQueue &Q, SqStack &S2)//处理规则2
     //DeQueue(Q,e);//')'
     while (Q.front->next != Q.rear)
     {
-        push(S2,ch);
+        push(S1,ch);
         DeQueue(Q,e);
-        push(S2,e);
+        push(S1,e);
     }
-    push(S2,ch);
+    push(S1,ch);
     DeQueue(Q,e);//Q中最后一个弹出,也就是那个特殊的
 }
 
@@ -206,10 +206,9 @@ void DestoryQueue(SqQueue &Q)
 
 int main()
 {
-    SqStack S, S1, S2;
+    SqStack S, S1;
     InitStack(S);
     InitStack(S1);
-    InitStack(S2);
     SqQueue Q;
     InitSqQueue(Q);
     char e;
@@ -226,23 +225,23 @@ int main()
         {
             //这里有修改
             //EnQueue(Q,e);
-            pop(S2,e);
+            pop(S1,e);
             while (e != '(')
             {
                 EnQueue(Q,e);
-                pop(S2,e);
+                pop(S1,e);
             }
             //这里有修改
             //if (e == '(')
                 //EnQueue(Q,e);
-            push_and_pop(Q,S2);
+            push_and_pop(Q,S1);
         }
         else
-            push(S2,e);
-    }
-    while (S2.top != S2.base)
+            push(S1,e);
+    }//到这字符都在S2中
+    while (S1.top != S1.base)
     {
-        pop(S2,e);
+        pop(S1,e);
         push(S,e);
     }
     DestoryQueue(Q);
@@ -269,6 +268,5 @@ int main()
     DestoryQueue(Q);
     free(S.base);
     free(S1.base);
-    free(S2.base);
     return 0;
 }

@@ -50,7 +50,8 @@ public:
   
     int Locate_Vex(string x)  //用于确定顶点在顶点数组中的位置  
     {  
-        for(int k=0;vexs[k]!=x;k++);  
+        int k;
+        for(k=0;vexs[k]!=x;k++);  
         return k;  
     }  
   
@@ -77,7 +78,7 @@ public:
             for(int w=0;w<vexnum;w++)  
             {  
                 Dist[v][w]=arcs[v][w];  
-                if(Dist[v][w]<MAX)  
+                if(Dist[v][w]<MAX) //从v到w有直接路径 by waikeung 
                     path[v][w]=v;  
                 else  
                     path[v][w]=-1;  
@@ -85,7 +86,7 @@ public:
         for(int u=0;u<vexnum;u++)  
             for(int v=0;v<vexnum;v++)  
                 for(int w=0;w<vexnum;w++)  
-                    if(v!=w && Dist[v][u]+Dist[u][w]<Dist[v][w])  
+                    if(v!=w && Dist[v][u]+Dist[u][w]<Dist[v][w]) //从v经u到w的一条路径更短 by waikeung
                     {  
                         Dist[v][w]=Dist[v][u]+Dist[u][w];  
                         path[v][w]=path[u][w];  

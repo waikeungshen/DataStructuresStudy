@@ -91,7 +91,6 @@ int CreateGraph(AMLGraph *G)
 }
 
 int visite[MAX_VERTEX_NUM];//访问标记数组
-int (*visitFunc)(VertexType v);//函数变量
 
 void DFS (AMLGraph G, int v)
 {
@@ -99,14 +98,16 @@ void DFS (AMLGraph G, int v)
     EBox *p;
 
     visite[v] = 1;
-    //visitFunc(G->adjmulist[v].data);
     cout << G.adjmulist[v].data << " ";
     p = G.adjmulist[v].firstedge;
     while (p)
     {
         i = p->ivex==v?p->jvex:p->ivex;
         if (!visite[i])
+        {
+            cout << G.adjmulist[v].data << "->" << G.adjmulist[i].data << endl; //边集
             DFS(G,i);
+        }
         p = p->ivex==v?p->ilink:p->jlink;
     }
 }
@@ -116,8 +117,10 @@ void DFSTraverse(AMLGraph G)
     int v;
     for (v = 0; v < G.vexnum; v++)
         visite[v] = 0;
-    for (v = 0; v < G.vexnum; v++)
-        if (!visite[v])
+    //for (v = 0; v < G.vexnum; v++)
+    //    if (!visite[v])
+    cout << "输入开始遍历的第一个顶点编号：";
+    cin >> v;
             DFS(G, v);
     cout << endl;
 }
@@ -178,8 +181,10 @@ void BFSTraverse(AMLGraph G)
     //Q.queue(MAX_VERTEX_NUM);
     for (v = 0; v < G.vexnum; v++)
         visite[v] = 0;
-    for (v = 0; v < G.vexnum; v++)
-    {
+    //for (v = 0; v < G.vexnum; v++)
+    //{
+        cout << "输入要遍历的第一个顶点编号：";
+        cin >> v;
         if (!visite[v])//v尚为被访问
         {
             visite[v] = 1;
@@ -194,11 +199,12 @@ void BFSTraverse(AMLGraph G)
                     {
                         visite[w] = 1;
                         cout << G.adjmulist[w].data << " ";
+                        cout << G.adjmulist[u].data << "->" << G.adjmulist[w].data << endl;//边集
                         Q.push(w);
                     }
             }
         }
-    }
+    //}
 }
 
 int main ()
